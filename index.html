@@ -293,16 +293,30 @@
     respWrap.hidden = false;
     respBox.textContent = "AYA анализира твоето запитване...";
 
-    const r = await fetch("/.netlify/functions/aya-gemini", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
+    try {
+      const r = await fetch("/.netlify/functions/aya-gemini", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
 
-    const out = await r.json();
-    respBox.textContent = out.text || "Няма отговор.";
+      const raw = await r.text(); // <-- важно
+      let out;
+
+      try {
+        out = JSON.parse(raw);
+      } catch {
+        throw new Error("Invalid JSON from backend");
+      }
+
+      respBox.textContent =
+        out.text || out.error || "Няма отговор от AYA.";
+
+    } catch (err) {
+      respBox.textContent = "Грешка при заявката. Моля, опитай отново.";
+      console.error(err);
+    }
   });
 </script>
-
 </body>
 </html>
