@@ -5,17 +5,23 @@ export async function handler(event) {
       return {
         statusCode: 405,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ error: "Method Not Allowed" })
-      };
+        body: JSON.stringify({
+  contents: [
+    {
+      role: "user",
+      parts: [
+        {
+          text: prompt
+        }
+      ]
     }
+  ],
+  generationConfig: {
+    temperature: 0.7,
+    maxOutputTokens: 700
+  }
+})
 
-    // Parse body safely
-    let body = {};
-    try {
-      body = JSON.parse(event.body || "{}");
-    } catch {
-      body = {};
-    }
 
     // Build prompt (NO template literals, NO fancy chars)
     const prompt =
