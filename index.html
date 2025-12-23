@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AYA — Luxury Travel Clarity</title>
+  <meta name="description" content="AYA — персонален travel интелект за ясни решения при пътуване. Без натиск. Без шум. Само логика." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="brand">
+      <div class="brand__mark">AYA</div>
+      <div class="brand__sub">Luxury Travel Clarity</div>
+    </div>
+
+    <nav class="nav">
+      <a href="#how">Как работи</a>
+      <a href="#deliverables">Какво получаваш</a>
+      <a href="#pricing">Пакети</a>
+      <a href="#contact" class="nav__cta">Започни</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container hero__grid">
+
+    <!-- COPY -->
+    <div class="hero__copy">
+      <h1>Луксозна яснота за твоето пътуване.</h1>
+
+      <p class="lead">
+        Персонален travel интелект, който проверява реални опции
+        и ти връща ясно решение.<br>
+        Без агенционен натиск. Без шум. Само логика.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">Започни сега</a>
+        <a class="btn btn--ghost" href="#pricing">Виж пакетите</a>
+      </div>
+
+      <p class="micro">Отговор до 24 часа · 2 минути вход</p>
+    </div>
+
+    <!-- INTAKE PANEL -->
+    <div class="hero__panel">
+      <div class="panel">
+        <div class="panel__title">Quick Intake</div>
+        <p class="panel__text">
+          Кратък вход. AYA връща ясен, структуриран план.
+        </p>
+
+        <form class="form" id="aya-form">
+
+          <div class="form__row">
+            <label>Дестинация</label>
+            <input name="destination" placeholder="напр. Zurich" required />
+          </div>
+
+          <div class="form__row form__row--2">
+            <div>
+              <label>От</label>
+              <input type="date" name="date_from" required />
+            </div>
+            <div>
+              <label>До</label>
+              <input type="date" name="date_to" required />
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div>
+              <label>Пътуващи</label>
+              <input name="people" placeholder="2 възрастни" required />
+            </div>
+            <div>
+              <label>Стил</label>
+              <input name="style" placeholder="Luxury / City / Relax" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <label>Бележка (по желание)</label>
+            <textarea name="notes" rows="3"
+              placeholder="Junior Suite, център, тиха атмосфера..."></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit">
+            Изпрати към AYA
+          </button>
+
+          <p class="micro micro--muted">
+            AYA анализира реални опции. Без резервации. Без комисионни.
+          </p>
+        </form>
+
+        <!-- RESPONSE -->
+        <div class="panel__response" id="aya-response" hidden>
+          <div class="panel__title">AYA Response</div>
+          <pre class="response__box" id="aya-response-box"></pre>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="section">
+  <div class="container">
+    <h2>Какво е AYA</h2>
+    <p class="muted">
+      AYA е интелигентен слой за решения при пътуване.
+    </p>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="card__kicker">Не е</div>
+        <div class="card__title">Туристическа агенция</div>
+        <div class="card__text">Няма натиск, няма комисионни.</div>
+      </div>
+      <div class="card">
+        <div class="card__kicker">Не е</div>
+        <div class="card__title">Платформа</div>
+        <div class="card__text">Не те губи в табове и филтри.</div>
+      </div>
+      <div class="card">
+        <div class="card__kicker">Не</div>
+        <div class="card__title">Продава резервации</div>
+        <div class="card__text">Връща ясно решение. Ти избираш.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section" id="how">
+  <div class="container">
+    <h2>Как работи</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step__num">1</div>
+        <div class="step__body">
+          <div class="step__title">Ти даваш контекста</div>
+          <div class="step__text">Дати, дестинация, стил.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <div class="step__body">
+          <div class="step__title">AYA анализира</div>
+          <div class="step__text">Реални опции, логика, ограничения.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <div class="step__body">
+          <div class="step__title">Ясно решение</div>
+          <div class="step__text">План + следваща стъпка.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section" id="deliverables">
+  <div class="container">
+    <h2>Какво получаваш</h2>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card__title">Travel Blueprint</div>
+        <ul class="list">
+          <li>Дневна логика</li>
+          <li>Зони и хотелска категория</li>
+          <li>Бюджетни диапазони</li>
+          <li>Алтернативи</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card__title">Trust Layer</div>
+        <ul class="list">
+          <li>Реални дати</li>
+          <li>Реални цени</li>
+          <li>Без комисионни</li>
+          <li>Без скрити интереси</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <h2>Пакети</h2>
+
+    <div class="pricing">
+      <div class="pricecard">
+        <div class="pricecard__top">
+          <div class="pricecard__name">BASIC</div>
+          <div class="pricecard__price">39 €</div>
+        </div>
+        <p class="pricecard__text">Travel Blueprint · 24h</p>
+        <a class="btn btn--ghost btn--full" href="#contact">Избери</a>
+      </div>
+
+      <div class="pricecard pricecard--featured">
+        <div class="pricecard__top">
+          <div class="pricecard__name">PREMIUM</div>
+          <div class="pricecard__price">69 €</div>
+        </div>
+        <p class="pricecard__text">Детайл + алтернативи</p>
+        <a class="btn btn--primary btn--full" href="#contact">Избери</a>
+      </div>
+
+      <div class="pricecard">
+        <div class="pricecard__top">
+          <div class="pricecard__name">VIP</div>
+          <div class="pricecard__price">on request</div>
+        </div>
+        <p class="pricecard__text">Discreet luxury handling</p>
+        <a class="btn btn--ghost btn--full" href="#contact">Запитване</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact">
+    <div>
+      <h2>Започни с AYA</h2>
+      <p class="muted">
+        Изпрати запитване и получи ясно решение.
+      </p>
+
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="https://wa.me/" target="_blank">WhatsApp</a>
+        <a class="btn btn--ghost" href="mailto:">Email</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__title">Тих принцип</div>
+      <div class="card__text">
+        AYA не получава комисионни от хотели или доставчици.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>AYA © <span id="year"></span></div>
+    <div class="footer__links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById("aya-form");
+  const respWrap = document.getElementById("aya-response");
+  const respBox = document.getElementById("aya-response-box");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    respWrap.hidden = false;
+    respBox.textContent = "AYA анализира твоето запитване...";
+
+    const r = await fetch("/.netlify/functions/aya-gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const out = await r.json();
+    respBox.textContent = out.text || "Няма отговор.";
+  });
+</script>
+
+</body>
+</html>
