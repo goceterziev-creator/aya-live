@@ -1,62 +1,59 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AYA Hub</title>
-  <meta name="description" content="Private travel clarity. Tailored. Discreet." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Montserrat,system-ui;background:#0b0f12;color:#f5f7f8}
-    .hero{min-height:100vh;position:relative;background:url('hero.jpg') center/cover no-repeat}
-    .overlay{position:absolute;inset:0;background:rgba(0,0,0,.35)}
-    .title{position:absolute;top:11vh;left:6vw;max-width:70%}
-    .title h1{margin:0;font-size:2.2rem;letter-spacing:.04em}
-    .title p{margin:.6rem 0 0;opacity:.88}
-    .card{position:absolute;top:56vh;left:50%;transform:translateX(-50%);
-      width:88%;background:rgba(0,0,0,.28);backdrop-filter:blur(6px);
-      border-radius:18px;padding:1.2rem}
-    .field{width:100%;padding:.85rem;margin-bottom:.8rem;border-radius:12px;
-      background:rgba(255,255,255,.12);color:#fff}
-    .cta{margin-top:.6rem}
-    .btn{display:block;width:100%;padding:.9rem;border-radius:999px;
-      text-align:center;font-weight:600;text-decoration:none}
-    .primary{background:linear-gradient(135deg,#6fe0c4,#5cc4e6);color:#0b1b1f;margin-bottom:.5rem}
-    .secondary{background:rgba(255,255,255,.12);color:#fff}
-    .note{margin-top:.6rem;font-size:.8rem;opacity:.7}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYA LIVE – Silent AI Infrastructure</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay"></div>
+  <main class="page">
+    <!-- Landing секция -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div>
+          <h1>AYA LIVE</h1>
+          <p class="hero__lead">Тиха инфраструктура, която превръща файловия хаос в структурирани активи, докато ти спиш.</p>
+          <div class="hero__actions">
+            <button id="btn-run-demo" class="button button--primary">Пусни демо анализ</button>
+            <button id="btn-toggle-panel" class="button button--ghost">Контролен панел</button>
+          </div>
+        </div>
+        <div class="hero__panel" id="control-panel" style="display:none;">
+          <h3>🔧 Silent AI Console</h3>
+          
+          <div class="field">
+            <label>Режим</label>
+            <select id="mode-select">
+              <option value="manual">Manual (ChatGPT copy/paste)</option>
+              <option value="palm2">PaLM 2 (през прокси)</option>
+            </select>
+          </div>
 
-    <div class="title">
-      <h1>AYA Hub</h1>
-      <p>Private travel clarity. Tailored. Discreet.</p>
-    </div>
+          <div class="field">
+            <label>API ключ (опционално)</label>
+            <input id="api-key-input" type="password" placeholder="pxxxxx... (PaLM/Gemini)">
+          </div>
 
-    <div class="card">
-      <div class="field">Destination · Paros · Maldives · Dubai</div>
-      <div class="field">Dates · e.g. 5–10 March</div>
-      <div class="field">Travellers · e.g. 2</div>
-      <div class="field">Budget · Comfort · Premium · Luxury</div>
+          <div class="field">
+            <label>INBOX файлове (JSON)</label>
+            <textarea id="files-input" rows="8" placeholder='[{"path":"INBOX/contract.pdf","title":"Договор","content":"..."}]'></textarea>
+          </div>
 
-      <div class="cta">
-        <a class="btn primary"
-           href="https://wa.me/359XXXXXXXXX?text=Hello,%0A%0AI%20would%20like%20a%20personal%20travel%20plan.%0A%0ADestination:%0ADates:%0ATravellers:%0ABudget:%0A%0AThank%20you.">
-          Send via WhatsApp
-        </a>
-        <a class="btn secondary"
-           href="mailto:you@email.com?subject=Private%20Travel%20Inquiry&body=Hello,%0A%0AI%20would%20like%20a%20personal%20travel%20plan.%0A%0ADestination:%0ADates:%0ATravellers:%0ABudget:%0A%0AThank%20you.">
-          Send via Email
-        </a>
+          <button id="btn-run-analysis" class="button button--primary w-full">🚀 Анализирай INBOX</button>
+          
+          <div class="log-container">
+            <pre id="log-output" class="log">Готов за работа...</pre>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="note">🔒 Data is used only for this inquiry.</div>
-    </div>
-  </section>
+  <script src="js/config.js"></script>
+  <script src="js/ai-orchestrator.js"></script>
+  <script src="js/palm2-client.js"></script>
+  <script src="js/drive-mock.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
