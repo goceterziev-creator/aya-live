@@ -1,0 +1,5 @@
+[
+  {"path": "INBOX/contract.pdf", "title": "Договор Клиент X", "content": "Договор за разработка на уеб приложение..."},
+  {"path": "INBOX/sprint-notes.txt", "title": "Бележки спринт 12", "content": "TODO: API endpoints, дизайн..."},
+  {"path": "INBOX/email-client.eml", "title": "Имейл от клиент", "content": "Моля уточнете сроковете..."}
+]
